@@ -15,6 +15,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // POST Routes
 
+app.get('/number', (req, res) => {
+  console.log('you got to /number!');
+
+  res.send(numbersOperations)
+})
+
 app.post('/number', (req, res) => {
 
   let numberObject = req.body;
@@ -22,14 +28,60 @@ app.post('/number', (req, res) => {
   console.log('In /number POST route');
   console.log('NumberObject:', numberObject);
 
-  doMathOperation(numberObject);
+  doMath(numberObject);
 
+    res.sendStatus(201);
 });
 
 
-function doMathOperation(numberObject) {
+function doMath(numberObject) {
 
-  let num1
+  let num1 = numberObject.num1;
+  let num2 = numberObject.num2;
+  let operator = numberObject.operator;
+  let answer;
+  let answerObj;
+
+  if(operator === '+') {
+    
+    answer = Number(num1) + Number(num2);
+
+    console.log(`In doMath ${num1} + ${num2} = ${answer}`);
+    
+  }
+
+  if(operator === '-') {
+    answer = num1 - num2;
+
+    console.log(`In doMath ${num1} - ${num2} = ${answer}`);
+    
+  }
+
+  if(operator === '*') {
+    
+    answer = num1 * num2;
+
+    console.log(`In doMath ${num1} * ${num2} = ${answer}`);
+    
+  }
+  if(operator === '/') {
+    
+    answer = num1 / num2;
+    console.log(`In doMath ${num1} / ${num2} = ${answer}`);
+    
+  }
+
+  answerObj = {
+
+    num1: num1,
+    num2: num2,
+    operator: operator,
+    answer: answer
+
+  }
+
+  numbersOperations.push(answerObj);
+  console.log('In numbersOperations array', numbersOperations);
 
 
 };// end doMathOperation

@@ -12,9 +12,34 @@ function handleReady() {
   $('#timesBtn').on('click', operatorTimes);
   $('#divideBtn').on('click', operatorDivide);
 
+  renderDom();
 
 }
 let operator = '';
+
+function renderDom() {
+
+  
+  $.ajax({
+
+    url: '/number',
+    type: 'GET'
+
+  }).then(function(response) {
+
+    if(response.length === 0) {
+      return response;
+    }else {
+    console.log('In renderDom back from server', response);
+
+    $('#result').text(`${response[response.length -1 ].answer}`)
+  }
+  }).catch(function(err) {
+
+    console.log(err);
+  });
+
+}// end renderDom
 
 function operatorAdd() {
   if(operator != '') {
@@ -78,6 +103,8 @@ function sendNumbers() {
 
   };
 
+
+
   console.log('Object to send:', numberObject);
 
   $.ajax({
@@ -88,12 +115,14 @@ function sendNumbers() {
   }).then(function(response) {
     console.log('Back from POST with:', response);
 
+    
   }).catch(function(err) {
 
     console.log(err);
   });
 
   emptyInputs();
-
+  renderDom();
+  operator = '';
 }// end sendNumbers
 
