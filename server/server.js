@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const PORT = 5000;
 
-let numbersOperations [];
+let numbersOperations = [];
 
 app.use(express.static('server/public'));
 
@@ -27,7 +27,12 @@ app.post('/number', (req, res) => {
 });
 
 
+function doMathOperation(numberObject) {
 
+  let num1
+
+
+};// end doMathOperation
 
 
 

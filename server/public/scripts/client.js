@@ -7,8 +7,59 @@ function handleReady() {
   console.log('jQ ready!');
 
   $('#equalsBtn').on('click', sendNumbers);
+  $('#addBtn').on('click', operatorAdd);
+  $('#minusBtn').on('click', operatorMinus);
+  $('#timesBtn').on('click', operatorTimes);
+  $('#divideBtn').on('click', operatorDivide);
+
 
 }
+let operator = '';
+
+function operatorAdd() {
+  if(operator != '') {
+  console.log('+ clicked');
+  
+  }else {
+    operator = '+';
+  }
+};// end operatorAdd
+
+function operatorMinus() {
+
+  if(operator != '') {
+    console.log('- clicked');
+    
+    }else {
+      operator = '-';
+      console.log('operator is:', operator);
+    }
+
+};// end operatorAdd
+
+function operatorTimes() {
+
+  if(operator != '') {
+    console.log('* clicked');
+    
+    }else {
+      operator = '*';
+      console.log('operator is:', operator);
+    }
+
+};// end operatorAdd
+
+function operatorDivide() {
+
+  if(operator != '') {
+    console.log('- clicked');
+    
+    }else {
+      operator = '/';
+      console.log('operator is:', operator);
+    }
+
+};// end operatorAdd
 
 function emptyInputs() {
 
@@ -22,7 +73,8 @@ function sendNumbers() {
   let numberObject = {
 
     num1: $('#num1In').val(),
-    num2: $('#num2In').val()
+    num2: $('#num2In').val(),
+    operator: operator
 
   };
 
