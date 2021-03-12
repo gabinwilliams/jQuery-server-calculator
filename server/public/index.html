@@ -4,24 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./vender/jquery-3.5.1.js"></script>
   <script src="./scripts/client.js"></script>
   <title>Document</title>
 </head>
 <body>
-  <h1>Server Side Calculator!</h1>
-  <div>
-    <input placeholder="number" type="number" id="num1In">
-    <button>+</button>
-    <button>-</button>
-    <button>*</button>
-    <button>/</button>
-    <input placeholder="number" type="number" id="num1In">
-    <button>=</button>
-    <button>C</button>
-  </div>
-  <div id="result">ANSWER HERE</div>
-  <ul id="history"></ul>
+  <main id="container">
+    <h1>Server Side Calculator!</h1>
+    <div>
+      <input placeholder="number" type="number" id="num1In" class="bg-transparent text-blue-600 font-semibold py-2 px-4 border mb-2 border-gray-600 rounded">
+
+      <button id="addBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded" >+</button>
+
+      <button id="minusBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">-</button>
+
+      <button id="timesBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">*</button>
+
+      <button id="divideBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">/</button>
+
+      <input placeholder="number" type="number" id="num1In" class="bg-transparent text-blue-600 font-semibold py-2 px-4 border mb-2 border-gray-600 rounded">
+
+      <button id="equalsBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">=</button>
+
+      <button id="clearBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">C</button>
+
+    </div>
+    <div id="result">ANSWER HERE</div>
+    <ul id="history"></ul>
+  </main>
 </body>
 </html>
