@@ -10,29 +10,32 @@
   <script src="./scripts/client.js"></script>
   <title>Document</title>
 </head>
-<body>
+<body class=" font-mono">
   <main id="container">
-    <h1>Server Side Calculator!</h1>
+    <header class="jumbotron text-4xl">
+      <h1>Server Side Calculator</h1>
+    </header>
     <div>
       <input placeholder="number" type="number" id="num1In" class="bg-transparent text-blue-600 font-semibold py-2 px-4 border mb-2 border-gray-600 rounded">
 
-      <button id="addBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded" >+</button>
+      <button id="addBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded" >+</button>
 
-      <button id="minusBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">-</button>
+      <button id="minusBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded">-</button>
 
-      <button id="timesBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">*</button>
+      <button id="timesBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded">*</button>
 
-      <button id="divideBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">/</button>
+      <button id="divideBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded">/</button>
 
-      <input placeholder="number" type="number" id="num2In" class="bg-transparent text-blue-600 font-semibold py-2 px-4 border mb-2 border-gray-600 rounded">
+      <input placeholder="number" type="number" id="num2In" class="bg-transparent text-blue-600 font-semibold py-2 px-4  border mb-2 border-gray-600 rounded">
 
-      <button id="equalsBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">=</button>
+      <button id="equalsBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded">=</button>
 
-      <button id="clearBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 border border-green-300 hover:border-green-700 rounded">C</button>
+      <button id="clearBtn" class="bg-green-300 text-white hover:text-green-600 font-semibold py-2 px-4 m-1 border border-green-300 hover:border-green-700 rounded">C</button>
 
     </div>
-    <h2 id="result" class="text-2xl"></h2>
-    <ul id="history"></ul>
+    <h2 id="result" class="text-2xl w-1/5 py-2 px-4 mb-5 bg-gray-300 rounded"></h2>
+    <h2 class=" text-2xl">Operation History:</h2><hr class="mb-5">
+      <ul id="history"></ul>
   </main>
 </body>
 </html>

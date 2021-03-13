@@ -11,6 +11,7 @@ function handleReady() {
   $('#minusBtn').on('click', operatorMinus);
   $('#timesBtn').on('click', operatorTimes);
   $('#divideBtn').on('click', operatorDivide);
+  $('#clearBtn').on('click', emptyInputs)
 
   renderDom();
 
@@ -33,7 +34,19 @@ function renderDom() {
     console.log('In renderDom back from server', response);
 
     $('#result').text(`${response[response.length -1 ].answer}`)
-  }
+
+    for(let i = 0; i < response.length; i++) {
+
+    
+    $('#history').append(`
+      
+      <li>${response[i].num1} ${response[i].operator} ${response[i].num2} = ${response[i].answer}</li>
+    
+    `)
+  }// end for
+
+  }// end if
+
   }).catch(function(err) {
 
     console.log(err);
@@ -88,6 +101,8 @@ function operatorDivide() {
 
 function emptyInputs() {
 
+  operator = '';
+  
   $('#num1In').val('');
   $('#num2In').val('');
 
@@ -122,7 +137,8 @@ function sendNumbers() {
   });
 
   emptyInputs();
+  $('#history').empty();
   renderDom();
-  operator = '';
+  
 }// end sendNumbers
 
