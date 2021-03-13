@@ -11,7 +11,7 @@ function handleReady() {
   $('#minusBtn').on('click', operatorMinus);
   $('#timesBtn').on('click', operatorTimes);
   $('#divideBtn').on('click', operatorDivide);
-  $('#clearBtn').on('click', emptyInputs)
+  $('#clearBtn').on('click', emptyInputs);
 
   renderDom();
 
@@ -102,7 +102,7 @@ function operatorDivide() {
 function emptyInputs() {
 
   operator = '';
-  
+  $('#result').text('');
   $('#num1In').val('');
   $('#num2In').val('');
 
@@ -137,8 +137,10 @@ function sendNumbers() {
   });
 
   emptyInputs();
+  
   $('#history').empty();
   renderDom();
+  
   
 }// end sendNumbers
 
