@@ -4,7 +4,7 @@
 
 This is 3/4 stack calculator app built with javaScript, jQuery, node.js
 
-<!-- ![screenshot of the app](https://github.com/ConnorDetviler/weekend-sql-to-do-list/blob/master/Screenshot.jpg) -->
+[screenshot of the app](https://github.com/gabinwilliams/jQuery-server-calculator/blob/master/images/app%20screenShot.png)
 
 ### Prerequisites
 
